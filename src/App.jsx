@@ -9,12 +9,9 @@ import data from './data/data';
 function App() {
 
   const cards = data.map((item) => {
-    return <Card 
-      rating={item.stats.rating}
-      reviewCount={item.stats.reviewCount}
-      location={item.location}
-      title={item.title}
-      price={item.price}
+    return <Card
+      key={item.id}
+      item={item}
     />
   })
 
@@ -22,7 +19,7 @@ function App() {
     <div className="App">
       <Navbar/>
       <Hero />
-      <div className="px-6 flex gap-4">
+      <div className="px-6 flex gap-4 w-full overflow-scroll">
         {cards}
       </div>
     </div>
